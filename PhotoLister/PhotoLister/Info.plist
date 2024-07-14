@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>API_KEY</key>
+	<string>255429a5b00649776b8bd9be7fd216d8</string>
+	<key>BASE_API_URL</key>
+	<string>https://api.flickr.com/services/rest/</string>
+</dict>
 </plist>

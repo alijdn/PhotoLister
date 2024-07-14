@@ -10,20 +10,17 @@ import Alamofire
 
 struct PhotosByTagsRequest: URLRequestConvertible {
     let tags: String
-    private let apiKey = "255429a5b00649776b8bd9be7fd216d8"
-    private let baseURL = "https://api.flickr.com/services/rest/"
-    
     
     func asURLRequest() throws -> URLRequest {
         let parameters: [String: String] = [
-            "api_key": apiKey,
+            "api_key": AppConfig.shared.apiKey,
             "method": "flickr.photos.search",
             "format": "json",
             "nojsoncallback": "1",
             "safe_search": "1",
             "tags": tags
         ]
-        let url = try baseURL.asURL()
+        let url = try AppConfig.shared.baseURL.asURL()
         var urlRequest = URLRequest(url: url)
         urlRequest.method = .get
         urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
