@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import Swinject
+
+final class PhotoDetailViewModelAssembly: Assembly {
+    func assemble(container: Swinject.Container) {
+        container.register(PhotoDetailViewModel.self) { resolver in
+            PhotoDetailViewModel(networkManager: resolver.resolve(NetworkManager.self)!)
+        }
+    }
+}

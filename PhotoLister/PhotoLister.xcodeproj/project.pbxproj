@@ -15,6 +15,11 @@
 		41BC0EC32C43D44300415589 /* UserPhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC22C43D44300415589 /* UserPhotoListView.swift */; };
 		41BC0EC52C43D45C00415589 /* UserPhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC42C43D45B00415589 /* UserPhotoListViewModel.swift */; };
 		41BC0EC72C43D49A00415589 /* UserPhotoListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC62C43D49A00415589 /* UserPhotoListAssembly.swift */; };
+		41BC0EC92C43F74900415589 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC82C43F74900415589 /* PhotoDetailView.swift */; };
+		41BC0ECB2C43F8C400415589 /* PhotoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ECA2C43F8C400415589 /* PhotoDetails.swift */; };
+		41BC0ECD2C43F93F00415589 /* PhotoDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ECC2C43F93F00415589 /* PhotoDetailsResponse.swift */; };
+		41BC0ECF2C43FA8400415589 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ECE2C43FA8400415589 /* PhotoDetailViewModel.swift */; };
+		41BC0ED12C43FB4700415589 /* PhotoListViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ED02C43FB4700415589 /* PhotoListViewModelAssembly.swift */; };
 		41D6A7D42C43B9A900E483A5 /* PhotoListerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */; };
 		41D6A7D62C43B9A900E483A5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A7D52C43B9A900E483A5 /* AppView.swift */; };
 		41D6A7D82C43B9AB00E483A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D6A7D72C43B9AB00E483A5 /* Assets.xcassets */; };
@@ -197,6 +202,11 @@
 		41BC0EC22C43D44300415589 /* UserPhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListView.swift; sourceTree = "<group>"; };
 		41BC0EC42C43D45B00415589 /* UserPhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListViewModel.swift; sourceTree = "<group>"; };
 		41BC0EC62C43D49A00415589 /* UserPhotoListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListAssembly.swift; sourceTree = "<group>"; };
+		41BC0EC82C43F74900415589 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		41BC0ECA2C43F8C400415589 /* PhotoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetails.swift; sourceTree = "<group>"; };
+		41BC0ECC2C43F93F00415589 /* PhotoDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsResponse.swift; sourceTree = "<group>"; };
+		41BC0ECE2C43FA8400415589 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
+		41BC0ED02C43FB4700415589 /* PhotoListViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModelAssembly.swift; sourceTree = "<group>"; };
 		41D6A7D02C43B9A900E483A5 /* PhotoLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListerApp.swift; sourceTree = "<group>"; };
 		41D6A7D52C43B9A900E483A5 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -354,6 +364,7 @@
 				41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */,
 				41D6A8032C43BB2B00E483A5 /* PhotoListView.swift */,
 				41BC0EC22C43D44300415589 /* UserPhotoListView.swift */,
+				41BC0EC82C43F74900415589 /* PhotoDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +374,7 @@
 			children = (
 				41D6A8052C43BB8100E483A5 /* PhotoListViewModel.swift */,
 				41BC0EC42C43D45B00415589 /* UserPhotoListViewModel.swift */,
+				41BC0ECE2C43FA8400415589 /* PhotoDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -400,6 +412,7 @@
 				41D6A8112C43BC7C00E483A5 /* ManagerAssembly.swift */,
 				41D6A8132C43BC8900E483A5 /* PhotoListVMAssembly.swift */,
 				41BC0EC62C43D49A00415589 /* UserPhotoListAssembly.swift */,
+				41BC0ED02C43FB4700415589 /* PhotoListViewModelAssembly.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -408,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				41D6A80B2C43BC0300E483A5 /* FlickrResponse.swift */,
+				41BC0ECC2C43F93F00415589 /* PhotoDetailsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,6 +431,7 @@
 			children = (
 				41D6A80D2C43BC3700E483A5 /* PhotosByTags.swift */,
 				41BC0EC02C43CAFF00415589 /* PhotosByUsername.swift */,
+				41BC0ECA2C43F8C400415589 /* PhotoDetails.swift */,
 			);
 			path = NetworkRequests;
 			sourceTree = "<group>";
@@ -702,18 +717,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BC0ECF2C43FA8400415589 /* PhotoDetailViewModel.swift in Sources */,
 				41D6A7D62C43B9A900E483A5 /* AppView.swift in Sources */,
 				41BC0EC12C43CAFF00415589 /* PhotosByUsername.swift in Sources */,
 				41D6A8102C43BC7100E483A5 /* MainAssembler.swift in Sources */,
 				41D6A8062C43BB8100E483A5 /* PhotoListViewModel.swift in Sources */,
 				41D6A8082C43BBD000E483A5 /* NetworkManager.swift in Sources */,
+				41BC0ED12C43FB4700415589 /* PhotoListViewModelAssembly.swift in Sources */,
 				41BC0EC52C43D45C00415589 /* UserPhotoListViewModel.swift in Sources */,
 				41D6A7D42C43B9A900E483A5 /* PhotoListerApp.swift in Sources */,
 				41D6A8142C43BC8900E483A5 /* PhotoListVMAssembly.swift in Sources */,
+				41BC0EC92C43F74900415589 /* PhotoDetailView.swift in Sources */,
 				41D6A8042C43BB2B00E483A5 /* PhotoListView.swift in Sources */,
 				41D6A80E2C43BC3700E483A5 /* PhotosByTags.swift in Sources */,
 				41D6A80C2C43BC0300E483A5 /* FlickrResponse.swift in Sources */,
+				41BC0ECD2C43F93F00415589 /* PhotoDetailsResponse.swift in Sources */,
 				41BC0EC32C43D44300415589 /* UserPhotoListView.swift in Sources */,
+				41BC0ECB2C43F8C400415589 /* PhotoDetails.swift in Sources */,
 				41D6A8122C43BC7C00E483A5 /* ManagerAssembly.swift in Sources */,
 				41BC0EC72C43D49A00415589 /* UserPhotoListAssembly.swift in Sources */,
 			);
