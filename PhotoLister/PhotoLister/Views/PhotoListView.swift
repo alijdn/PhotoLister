@@ -55,22 +55,24 @@ struct PhotoListView: View {
                                     }
                                 }
                                 .padding(.bottom, 5)
-                                
-                                // Profile Photo
-                                AsyncImage(url: photo.photoURL) { image in
-                                    image.resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(height: 200)
-                                        .clipped()
-                                } placeholder: {
-                                    Rectangle()
-                                        .fill(Color.gray)
-                                        .frame(height: 200)
-                                        .overlay(
-                                            Text("Image Placeholder")
-                                                .foregroundColor(.white)
-                                        )
+                                NavigationLink(destination: PhotoDetailView(photoId: photo.id, photoUrl: photo.photoURL, userIconURL: photo.userIconURL)) {
+                                    // Profile Photo
+                                    AsyncImage(url: photo.photoURL) { image in
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(height: 200)
+                                            .clipped()
+                                    } placeholder: {
+                                        Rectangle()
+                                            .fill(Color.gray)
+                                            .frame(height: 200)
+                                            .overlay(
+                                                Text("Image Placeholder")
+                                                    .foregroundColor(.white)
+                                            )
+                                    }
                                 }
+                                
                                 Text(photo.title)
                                     .padding(.top, 5)
                             }
