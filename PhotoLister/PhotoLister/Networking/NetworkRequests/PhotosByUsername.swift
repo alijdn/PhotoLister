@@ -19,6 +19,7 @@ struct PhotosByUsernameRequest: URLRequestConvertible {
             "method": "flickr.people.getPhotos",
             "format": "json",
             "nojsoncallback": "1",
+            "safe_search": "1",
             "user_id": username,
             "per_page": "10"
         ]
