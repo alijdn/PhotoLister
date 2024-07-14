@@ -4,7 +4,6 @@
 //
 //  Created by ali Jamaldin on 11/07/2024.
 //
-
 import SwiftUI
 
 struct PhotoListView: View {
@@ -33,22 +32,27 @@ struct PhotoListView: View {
                                 
                                 // Profile Picture and ID
                                 HStack {
-                                    AsyncImage(url: photo.userIconURL) { image in
-                                        image.resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 50, height: 50)
-                                            .clipShape(Circle())
-                                    } placeholder: {
-                                        Circle()
-                                            .fill(Color.gray)
-                                            .frame(width: 50, height: 50)
+                                    NavigationLink(destination: UserPhotosView(username: photo.owner)) {
+                                        HStack {
+                                            AsyncImage(url: photo.userIconURL) { image in
+                                                image.resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 50, height: 50)
+                                                    .clipShape(Circle())
+                                            } placeholder: {
+                                                Circle()
+                                                    .fill(Color.gray)
+                                                    .frame(width: 50, height: 50)
+                                            }
+                                            
+                                            VStack(alignment: .leading) {
+                                                Text(photo.owner)
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.gray)
+                                            }
+                                            Spacer()
+                                        }
                                     }
-                                    VStack(alignment: .leading) {
-                                        Text(photo.id)
-                                            .font(.subheadline)
-                                            .foregroundColor(.gray)
-                                    }
-                                    Spacer()
                                 }
                                 .padding(.bottom, 5)
                                 
