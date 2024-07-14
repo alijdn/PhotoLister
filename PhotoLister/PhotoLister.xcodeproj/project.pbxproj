@@ -11,6 +11,10 @@
 		41BC0EBA2C43BFCF00415589 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC0EA62C43BFA900415589 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41BC0EBC2C43C01800415589 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC0E862C43BF7800415589 /* Swinject.framework */; };
 		41BC0EBD2C43C01800415589 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC0E862C43BF7800415589 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41BC0EC12C43CAFF00415589 /* PhotosByUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC02C43CAFF00415589 /* PhotosByUsername.swift */; };
+		41BC0EC32C43D44300415589 /* UserPhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC22C43D44300415589 /* UserPhotoListView.swift */; };
+		41BC0EC52C43D45C00415589 /* UserPhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC42C43D45B00415589 /* UserPhotoListViewModel.swift */; };
+		41BC0EC72C43D49A00415589 /* UserPhotoListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0EC62C43D49A00415589 /* UserPhotoListAssembly.swift */; };
 		41D6A7D42C43B9A900E483A5 /* PhotoListerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */; };
 		41D6A7D62C43B9A900E483A5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A7D52C43B9A900E483A5 /* AppView.swift */; };
 		41D6A7D82C43B9AB00E483A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D6A7D72C43B9AB00E483A5 /* Assets.xcassets */; };
@@ -189,6 +193,10 @@
 /* Begin PBXFileReference section */
 		41BC0E7A2C43BF7800415589 /* Swinject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swinject.xcodeproj; path = "../../../../../../Downloads/Swinject-master/Swinject.xcodeproj"; sourceTree = "<group>"; };
 		41BC0E982C43BFA900415589 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		41BC0EC02C43CAFF00415589 /* PhotosByUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosByUsername.swift; sourceTree = "<group>"; };
+		41BC0EC22C43D44300415589 /* UserPhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListView.swift; sourceTree = "<group>"; };
+		41BC0EC42C43D45B00415589 /* UserPhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListViewModel.swift; sourceTree = "<group>"; };
+		41BC0EC62C43D49A00415589 /* UserPhotoListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListAssembly.swift; sourceTree = "<group>"; };
 		41D6A7D02C43B9A900E483A5 /* PhotoLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListerApp.swift; sourceTree = "<group>"; };
 		41D6A7D52C43B9A900E483A5 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -345,6 +353,7 @@
 				41D6A7D52C43B9A900E483A5 /* AppView.swift */,
 				41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */,
 				41D6A8032C43BB2B00E483A5 /* PhotoListView.swift */,
+				41BC0EC22C43D44300415589 /* UserPhotoListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				41D6A8052C43BB8100E483A5 /* PhotoListViewModel.swift */,
+				41BC0EC42C43D45B00415589 /* UserPhotoListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -389,6 +399,7 @@
 				41D6A80F2C43BC7100E483A5 /* MainAssembler.swift */,
 				41D6A8112C43BC7C00E483A5 /* ManagerAssembly.swift */,
 				41D6A8132C43BC8900E483A5 /* PhotoListVMAssembly.swift */,
+				41BC0EC62C43D49A00415589 /* UserPhotoListAssembly.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -405,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				41D6A80D2C43BC3700E483A5 /* PhotosByTags.swift */,
+				41BC0EC02C43CAFF00415589 /* PhotosByUsername.swift */,
 			);
 			path = NetworkRequests;
 			sourceTree = "<group>";
@@ -691,15 +703,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D6A7D62C43B9A900E483A5 /* AppView.swift in Sources */,
+				41BC0EC12C43CAFF00415589 /* PhotosByUsername.swift in Sources */,
 				41D6A8102C43BC7100E483A5 /* MainAssembler.swift in Sources */,
 				41D6A8062C43BB8100E483A5 /* PhotoListViewModel.swift in Sources */,
 				41D6A8082C43BBD000E483A5 /* NetworkManager.swift in Sources */,
+				41BC0EC52C43D45C00415589 /* UserPhotoListViewModel.swift in Sources */,
 				41D6A7D42C43B9A900E483A5 /* PhotoListerApp.swift in Sources */,
 				41D6A8142C43BC8900E483A5 /* PhotoListVMAssembly.swift in Sources */,
 				41D6A8042C43BB2B00E483A5 /* PhotoListView.swift in Sources */,
 				41D6A80E2C43BC3700E483A5 /* PhotosByTags.swift in Sources */,
 				41D6A80C2C43BC0300E483A5 /* FlickrResponse.swift in Sources */,
+				41BC0EC32C43D44300415589 /* UserPhotoListView.swift in Sources */,
 				41D6A8122C43BC7C00E483A5 /* ManagerAssembly.swift in Sources */,
+				41BC0EC72C43D49A00415589 /* UserPhotoListAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
