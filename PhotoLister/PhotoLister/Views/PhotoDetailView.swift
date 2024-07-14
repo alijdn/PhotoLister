@@ -8,8 +8,7 @@
 //import SwiftUI
 import Combine
 import SwiftUI
-
-
+import Kingfisher
 
 struct PhotoDetailView: View {
     @StateObject var viewModel: PhotoDetailViewModel
@@ -26,48 +25,43 @@ struct PhotoDetailView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            if let photoDetails = viewModel.photoDetails {
-                HStack {
-                    AsyncImage(url: userIconURL) { image in
-                        image.image?.resizable().frame(width: 50, height: 50, alignment: .center)
-                            .cornerRadius(50)
+            VStack(spacing: 0) {
+                if let photoDetails = viewModel.photoDetails {
+                    Header(imageURL: userIconURL, username: photoDetails.owner.username)
+                        .padding(5)
+                    Cell(imageURL: photoURL)
+                        .padding(5)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 3) {
+                            
+                            Text("Photo title")
+                                .font(.title3)
+                                .foregroundStyle(.purple)
+                            Text(photoDetails.title._content)
+                            Text("Date taken")
+                                .font(.title3)
+                                .foregroundStyle(.purple)
+                            Text(photoDetails.dates.taken)
+                            Text("Photo description")
+                                .font(.title3)
+                                .foregroundStyle(.purple)
+                            Text("Photo description")
+                                .font(.title3)
+                                .foregroundStyle(.purple)
+                            ScrollView {
+                                Text(photoDetails.description._content)
+                            }
+                        }
+                        Spacer()
                     }
-                    Text(photoDetails.owner.username)
-                        .font(.callout)
-                        .fontWeight(.bold)
+                    .padding()
                     Spacer()
                 }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 8)
-                
-                AsyncImage(url: photoURL) { image in
-                    image.image?.resizable().scaledToFit()
-                }
-
-                VStack(alignment: .leading) {
-                    Text("Photo title")
-                        .font(.title3)
-                        .foregroundStyle(.purple)
-                    Text(photoDetails.title._content)
-                    Text("Date taken")
-                        .font(.title3)
-                        .foregroundStyle(.purple)
-                    Text(photoDetails.dates.taken)
-                    Text("Photo description")
-                        .font(.title3)
-                        .foregroundStyle(.purple)
-                    ScrollView {
-                        Text(photoDetails.description._content)
-                    }
-                }
-                .padding()
-                Spacer()
             }
-        }
-        .onAppear {
-            viewModel.getPhotoDetails(photoId: photoId)
-        }
-        .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                viewModel.getPhotoDetails(photoId: photoId)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+        
     }
 }

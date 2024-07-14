@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserPhotosView: View {
     @StateObject var viewModel: UserPhotoListViewModel
@@ -16,34 +17,19 @@ struct UserPhotosView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.username = username
     }
-    
-    var gridItem: [GridItem] = [GridItem(.flexible(), spacing: 1),
-                                GridItem(.flexible(), spacing: 1),
-                                GridItem(.flexible(), spacing: 1)]
-    
+
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVGrid(
+                columns: [
+                    GridItem(.flexible(), spacing: 3),
+                    GridItem(.flexible(), spacing: 3),
+                    GridItem(.flexible(), spacing: 3)
+                ],
+                spacing: 3
+            ) {
                 ForEach(viewModel.userPhotos) { photo in
-                    VStack(alignment: .leading) {
-                        AsyncImage(url: photo.photoURL) { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 200)
-                                .clipped()
-                        } placeholder: {
-                            Rectangle()
-                                .fill(Color.gray)
-                                .frame(height: 200)
-                                .overlay(
-                                    Text("Image Placeholder")
-                                        .foregroundColor(.white)
-                                )
-                        }
-                        Text(photo.title)
-                            .padding(.top, 5)
-                    }
-                    .padding()
+                    TillView(imageUrl: photo.photoURL, size: 127, cornerRadius: 0)
                 }
             }
         }
@@ -54,9 +40,17 @@ struct UserPhotosView: View {
     }
 }
 
-
-struct UserPhotosView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserPhotosView(username: "example_user")
+struct TillView: View {
+    let imageUrl: URL
+    let size: CGFloat
+    let cornerRadius: CGFloat
+    
+    var body: some View {
+        KFImage(imageUrl)
+            .resizable()
+            .scaledToFill()
+            .frame(width: size, height: size)
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .shadow(radius: 5)
     }
 }

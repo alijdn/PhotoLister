@@ -20,6 +20,9 @@
 		41BC0ECD2C43F93F00415589 /* PhotoDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ECC2C43F93F00415589 /* PhotoDetailsResponse.swift */; };
 		41BC0ECF2C43FA8400415589 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ECE2C43FA8400415589 /* PhotoDetailViewModel.swift */; };
 		41BC0ED12C43FB4700415589 /* PhotoListViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ED02C43FB4700415589 /* PhotoListViewModelAssembly.swift */; };
+		41BC0ED42C4466A900415589 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC0ED32C4466A900415589 /* AppConfig.swift */; };
+		41BC0EE02C44767C00415589 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC0EDD2C44766500415589 /* Kingfisher.framework */; };
+		41BC0EE12C44767C00415589 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC0EDD2C44766500415589 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41D6A7D42C43B9A900E483A5 /* PhotoListerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */; };
 		41D6A7D62C43B9A900E483A5 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6A7D52C43B9A900E483A5 /* AppView.swift */; };
 		41D6A7D82C43B9AB00E483A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D6A7D72C43B9AB00E483A5 /* Assets.xcassets */; };
@@ -164,6 +167,20 @@
 			remoteGlobalIDString = 317338F42A43BE5F00D4EA0A;
 			remoteInfo = "Alamofire visionOS Tests";
 		};
+		41BC0EDC2C44766500415589 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41BC0ED72C44766400415589 /* Kingfisher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D1ED2D351AD2D09F00CFC3EB;
+			remoteInfo = Kingfisher;
+		};
+		41BC0EDE2C44766500415589 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41BC0ED72C44766400415589 /* Kingfisher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D1ED2D3F1AD2D09F00CFC3EB;
+			remoteInfo = KingfisherTests;
+		};
 		41D6A7E12C43B9AC00E483A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41D6A7C82C43B9A900E483A5 /* Project object */;
@@ -188,6 +205,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				41BC0EBA2C43BFCF00415589 /* Alamofire.framework in Embed Frameworks */,
+				41BC0EE12C44767C00415589 /* Kingfisher.framework in Embed Frameworks */,
 				41BC0EBD2C43C01800415589 /* Swinject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -207,6 +225,8 @@
 		41BC0ECC2C43F93F00415589 /* PhotoDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsResponse.swift; sourceTree = "<group>"; };
 		41BC0ECE2C43FA8400415589 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		41BC0ED02C43FB4700415589 /* PhotoListViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModelAssembly.swift; sourceTree = "<group>"; };
+		41BC0ED32C4466A900415589 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		41BC0ED72C44766400415589 /* Kingfisher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher.xcodeproj; path = "../../../../../../Downloads/Kingfisher-master/Kingfisher.xcodeproj"; sourceTree = "<group>"; };
 		41D6A7D02C43B9A900E483A5 /* PhotoLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6A7D32C43B9A900E483A5 /* PhotoListerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListerApp.swift; sourceTree = "<group>"; };
 		41D6A7D52C43B9A900E483A5 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -234,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41BC0EB92C43BFCF00415589 /* Alamofire.framework in Frameworks */,
+				41BC0EE02C44767C00415589 /* Kingfisher.framework in Frameworks */,
 				41BC0EBC2C43C01800415589 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +313,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41BC0ED82C44766400415589 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41BC0EDD2C44766500415589 /* Kingfisher.framework */,
+				41BC0EDF2C44766500415589 /* KingfisherTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		41D6A7C72C43B9A900E483A5 = {
@@ -382,6 +412,7 @@
 		41D6A7FF2C43BA3600E483A5 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				41BC0ED72C44766400415589 /* Kingfisher.xcodeproj */,
 				41BC0E982C43BFA900415589 /* Alamofire.xcodeproj */,
 				41BC0E7A2C43BF7800415589 /* Swinject.xcodeproj */,
 			);
@@ -439,6 +470,7 @@
 		41D6A8152C43BCF600E483A5 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				41BC0ED32C4466A900415589 /* AppConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -542,6 +574,10 @@
 				{
 					ProductGroup = 41BC0E992C43BFA900415589 /* Products */;
 					ProjectRef = 41BC0E982C43BFA900415589 /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = 41BC0ED82C44766400415589 /* Products */;
+					ProjectRef = 41BC0ED72C44766400415589 /* Kingfisher.xcodeproj */;
 				},
 				{
 					ProductGroup = 41BC0E7B2C43BF7800415589 /* Products */;
@@ -684,6 +720,20 @@
 			remoteRef = 41BC0EB72C43BFA900415589 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		41BC0EDD2C44766500415589 /* Kingfisher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Kingfisher.framework;
+			remoteRef = 41BC0EDC2C44766500415589 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		41BC0EDF2C44766500415589 /* KingfisherTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KingfisherTests.xctest;
+			remoteRef = 41BC0EDE2C44766500415589 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -718,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41BC0ECF2C43FA8400415589 /* PhotoDetailViewModel.swift in Sources */,
+				41BC0ED42C4466A900415589 /* AppConfig.swift in Sources */,
 				41D6A7D62C43B9A900E483A5 /* AppView.swift in Sources */,
 				41BC0EC12C43CAFF00415589 /* PhotosByUsername.swift in Sources */,
 				41D6A8102C43BC7100E483A5 /* MainAssembler.swift in Sources */,
