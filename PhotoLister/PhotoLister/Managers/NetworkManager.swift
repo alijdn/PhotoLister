@@ -10,31 +10,47 @@ import Combine
 import Alamofire
 
 final class NetworkManager {
-    
     enum ResponseError: Error {
-        case emptyResponse
-        case decodeError(Error)
+        case genericError
+        case alamofire(_ error: AFError, _ data: Data?)
+        case decodeError(_ error: Error)
+        case errorWithMessage(_ message: String)
     }
     
-    func request<T: Decodable>(_ urlRequest: URLRequestConvertible) -> AnyPublisher<T, ResponseError> {
+    func request<ResponseObject: Decodable>(
+        _ urlRequest: URLRequestConvertible
+    ) -> AnyPublisher<ResponseObject, ResponseError> {
         return AF.request(urlRequest)
             .validate()
             .publishData()
-            .tryMap { response in
-                guard let data = response.data else {
-                    throw ResponseError.emptyResponse
+            .tryMap(mapResponseError)
+            .eraseToAnyPublisher()
+            .map { data in
+                guard let data = data, !data.isEmpty else {
+                    return "{}".data(using: .utf8) ?? Data()
                 }
                 return data
             }
-            .decode(type: T.self, decoder: JSONDecoder())
-            .mapError { error in
-                if let responseError = error as? ResponseError {
-                    return responseError
-                } else {
-                    return ResponseError.decodeError(error)
+            .decode(type: ResponseObject.self, decoder: JSONDecoder())
+            .mapError { (error) -> ResponseError in
+                if let error = error as? ResponseError {
+                    return error
                 }
+                return ResponseError.decodeError(error)
             }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
+    }
+    
+    private func mapResponseError(_ response: DataResponse<Data, AFError>) throws -> Data? {
+        if response.error != nil {
+            try handleResponseError(response)
+        }
+        return response.data
+    }
+
+    private func handleResponseError(_ response: DataResponse<Data, AFError>) throws {
+        guard let error = response.error else { return }
+        throw ResponseError.alamofire(error, response.data)
     }
 }
