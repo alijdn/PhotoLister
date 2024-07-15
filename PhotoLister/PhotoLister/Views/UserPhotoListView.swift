@@ -30,6 +30,11 @@ struct UserPhotosView: View {
             ) {
                 ForEach(viewModel.userPhotos) { photo in
                     TillView(imageUrl: photo.photoURL, size: 127, cornerRadius: 0)
+                        .onAppear {
+                            if shouldLoadNextPage(currentPhoto: photo) {
+                                viewModel.getPhotosByUsername(owner: username)
+                            }
+                    }
                 }
             }
         }
@@ -38,6 +43,11 @@ struct UserPhotosView: View {
             viewModel.getPhotosByUsername(owner: username)
         }
     }
+    
+    private func shouldLoadNextPage(currentPhoto: Photo) -> Bool {
+           guard let lastPhoto = viewModel.userPhotos.last else { return false }
+           return currentPhoto.id == lastPhoto.id
+       }
 }
 
 struct TillView: View {
