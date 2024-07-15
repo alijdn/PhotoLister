@@ -4,8 +4,6 @@
 //
 //  Created by ali Jamaldin on 14/07/2024.
 //
-
-//import SwiftUI
 import Combine
 import SwiftUI
 import Kingfisher
@@ -42,9 +40,6 @@ struct PhotoDetailView: View {
                                 .font(.title3)
                                 .foregroundStyle(.purple)
                             Text(photoDetails.dates.taken)
-                            Text("Photo description")
-                                .font(.title3)
-                                .foregroundStyle(.purple)
                             Text("Photo description")
                                 .font(.title3)
                                 .foregroundStyle(.purple)

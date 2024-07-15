@@ -10,7 +10,7 @@ import Kingfisher
 
 struct UserPhotosView: View {
     @StateObject var viewModel: UserPhotoListViewModel
-    let username: String
+    private let username: String
     
     init(username: String) {
         let viewModel = MainAssembler.shared.main.resolve(UserPhotoListViewModel.self)!
@@ -28,13 +28,8 @@ struct UserPhotosView: View {
                 ],
                 spacing: 3
             ) {
-                ForEach(viewModel.userPhotos) { photo in
+                ForEach(viewModel.userPhotos, id: \.id) { photo in
                     TillView(imageUrl: photo.photoURL, size: 127, cornerRadius: 0)
-                        .onAppear {
-                            if shouldLoadNextPage(currentPhoto: photo) {
-                                viewModel.getPhotosByUsername(owner: username)
-                            }
-                    }
                 }
             }
         }
@@ -43,11 +38,6 @@ struct UserPhotosView: View {
             viewModel.getPhotosByUsername(owner: username)
         }
     }
-    
-    private func shouldLoadNextPage(currentPhoto: Photo) -> Bool {
-           guard let lastPhoto = viewModel.userPhotos.last else { return false }
-           return currentPhoto.id == lastPhoto.id
-       }
 }
 
 struct TillView: View {
