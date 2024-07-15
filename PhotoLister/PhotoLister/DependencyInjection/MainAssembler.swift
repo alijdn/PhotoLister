@@ -16,7 +16,10 @@ final class MainAssembler {
     private init() {
         main = Container()
         assembler = Assembler(
-            [NetworkManagerAssembly(), PhotoListViewModelAssembly(), UserPhotoListViewModelAssembly(), PhotoDetailViewModelAssembly()],
+            [
+                NetworkManagerAssembly(), PhotoListViewModelAssembly(),
+                UserPhotoListViewModelAssembly(), PhotoDetailViewModelAssembly()
+            ],
             container: main)
     }
 }
