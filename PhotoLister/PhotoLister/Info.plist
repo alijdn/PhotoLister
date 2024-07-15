@@ -6,5 +6,7 @@
 	<string>255429a5b00649776b8bd9be7fd216d8</string>
 	<key>BASE_API_URL</key>
 	<string>https://api.flickr.com/services/rest/</string>
+	<key>API_SECRET</key>
+	<string>b27d6c13839695df</string>
 </dict>
 </plist>
