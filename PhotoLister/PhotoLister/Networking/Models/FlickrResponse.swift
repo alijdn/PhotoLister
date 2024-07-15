@@ -31,11 +31,11 @@ struct Photo: Hashable, Identifiable, Codable {
     let isfamily: Int
     
     var photoURL: URL {
-            URL(string: "https://live.staticflickr.com/\(server)/\(id)_\(secret).jpg")!
-        }
+        URL(string: "https://live.staticflickr.com/\(server)/\(id)_\(secret).jpg")!
+    }
     var userIconURL: URL {
-            URL(string: "https://farm\(farm).staticflickr.com/\(server)/buddyicons/\(owner).jpg")!
-        }
+        URL(string: "https://farm\(farm).staticflickr.com/\(server)/buddyicons/\(owner).jpg")!
+    }
     
     static var sampleData: [Photo] {
         [

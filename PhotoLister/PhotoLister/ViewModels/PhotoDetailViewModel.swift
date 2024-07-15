@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class PhotoDetailViewModel: ObservableObject {
-    let networkManager: NetworkManager
-    private var tasks = Set<AnyCancellable>()
+    private let networkManager: NetworkManager
+    private var subscriptions = Set<AnyCancellable>()
     @Published var photoDetails: PhotoDetailsResponse.PhotoDetails?
     
     init(networkManager: NetworkManager) {
@@ -31,6 +31,6 @@ class PhotoDetailViewModel: ObservableObject {
             } receiveValue: { [weak self] (response: PhotoDetailsResponse) in
                 print("Response: \(response)")
                 self?.photoDetails = response.photo
-            }.store(in: &tasks)
+            }.store(in: &subscriptions)
     }
 }
