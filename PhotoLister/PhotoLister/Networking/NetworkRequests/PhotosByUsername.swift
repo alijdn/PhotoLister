@@ -10,6 +10,7 @@ import Alamofire
 
 struct PhotosByUsernameRequest: URLRequestConvertible {
     let username: String
+    let page: String
     
     func asURLRequest() throws -> URLRequest {
         let parameters: [String: String] = [
@@ -18,6 +19,7 @@ struct PhotosByUsernameRequest: URLRequestConvertible {
             "format": "json",
             "nojsoncallback": "1",
             "safe_search": "1",
+            "page": "\(page)",
             "user_id": username
         ]
         let url = try AppConfig.shared.baseURL.asURL()

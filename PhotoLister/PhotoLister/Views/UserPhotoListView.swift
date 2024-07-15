@@ -30,12 +30,22 @@ struct UserPhotosView: View {
             ) {
                 ForEach(viewModel.userPhotos, id: \.id) { photo in
                     TillView(imageUrl: photo.photoURL, size: 127, cornerRadius: 0)
+                        .onAppear() {
+                            if photo.id == viewModel.userPhotos.last?.id {
+                                print("Reached the last photo")
+                                if viewModel.lastPage > viewModel.currentPage {
+                                    print("More paged to go")
+                                    viewModel.currentPage += 1
+                                    viewModel.getPhotosByUsername(owner: username, page: String(viewModel.currentPage))
+                                }
+                            }
+                        }
                 }
             }
         }
         .navigationTitle("User Photos")
         .onAppear {
-            viewModel.getPhotosByUsername(owner: username)
+            viewModel.getPhotosByUsername(owner: username, page: "1")
         }
     }
 }
